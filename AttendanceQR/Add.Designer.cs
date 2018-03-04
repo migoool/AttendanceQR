@@ -45,6 +45,7 @@
             this.registerButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.personalinformationGroup.SuspendLayout();
             this.courseinformationGroup.SuspendLayout();
             this.SuspendLayout();
@@ -237,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 411);
+            this.ClientSize = new System.Drawing.Size(280, 411);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.registerButton);
@@ -278,5 +279,6 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ComboBox courseText;
         private System.Windows.Forms.ComboBox yearText;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

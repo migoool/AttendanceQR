@@ -36,7 +36,9 @@ namespace AttendanceQR
 
         private void viewAttendance_Click(object sender, EventArgs e)
         {
-
+            Attendance viewAttendance = new Attendance();
+            this.Hide();
+            viewAttendance.ShowDialog();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)

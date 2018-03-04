@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace AttendanceQR
         public View()
         {
             InitializeComponent();
+            this.Size = new Size(535, 460);
             listUsers();
         }
 
@@ -113,8 +115,6 @@ namespace AttendanceQR
 
             }
         }
-
-
 
         private void updateUser(string id, string fname, string middle, string lname, string course, string year, string section)
         {
@@ -219,6 +219,47 @@ namespace AttendanceQR
                 listUsers();
             }
            
+        }
+
+        private void getQR_Click_1(object sender, EventArgs e)
+        {
+            this.Size = new Size(1030, 460);
+            this.Location = new Point(200, 130);
+
+            String id = userIDText.Text;
+
+            MessagingToolkit.QRCode.Codec.QRCodeEncoder encoder = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
+            encoder.QRCodeScale = 9;
+            Bitmap bmp = encoder.Encode(id);
+            QRPic.Image = bmp;
+
+
+        }
+
+        private void cancelQR_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(800, 460);
+            this.Location = new Point(300, 130);
+
+        }
+
+        private void saveQR_Click(object sender, EventArgs e)
+        {
+            String id = userIDText.Text;
+
+            MessagingToolkit.QRCode.Codec.QRCodeEncoder encoder = new MessagingToolkit.QRCode.Codec.QRCodeEncoder();
+            encoder.QRCodeScale = 9;
+            Bitmap bmp = encoder.Encode(id);
+            QRPic.Image = bmp;
+
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    bmp.Save(sfd.FileName, ImageFormat.Jpeg);
+                }
+
+            }
         }
     }
 }

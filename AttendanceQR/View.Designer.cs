@@ -33,10 +33,17 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.updateButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.deleteUser = new System.Windows.Forms.Button();
+            this.getQR = new System.Windows.Forms.Button();
+            this.userIDText = new System.Windows.Forms.Label();
+            this.QRPic = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.personalinformationGroup = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lastnameText = new System.Windows.Forms.TextBox();
@@ -51,10 +58,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textlabel = new System.Windows.Forms.Label();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.userIDText = new System.Windows.Forms.Label();
-            this.deleteUser = new System.Windows.Forms.Button();
+            this.saveQR = new System.Windows.Forms.Button();
+            this.cancelQR = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.QRPic)).BeginInit();
             this.personalinformationGroup.SuspendLayout();
             this.courseinformationGroup.SuspendLayout();
             this.SuspendLayout();
@@ -103,14 +109,6 @@
             this.columnHeader4.Text = "Lastname";
             this.columnHeader4.Width = 75;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(517, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Course";
@@ -126,6 +124,96 @@
             this.columnHeader7.Text = "Sec";
             this.columnHeader7.Width = 50;
             // 
+            // updateButton
+            // 
+            this.updateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.updateButton.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateButton.ForeColor = System.Drawing.Color.DarkGreen;
+            this.updateButton.Location = new System.Drawing.Point(520, 282);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(255, 40);
+            this.updateButton.TabIndex = 13;
+            this.updateButton.Text = "UPDATE USER";
+            this.updateButton.UseVisualStyleBackColor = false;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cancelButton.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.ForeColor = System.Drawing.Color.Teal;
+            this.cancelButton.Location = new System.Drawing.Point(520, 328);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(125, 40);
+            this.cancelButton.TabIndex = 14;
+            this.cancelButton.Text = "CANCEL";
+            this.cancelButton.UseVisualStyleBackColor = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // deleteUser
+            // 
+            this.deleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.deleteUser.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteUser.Location = new System.Drawing.Point(650, 328);
+            this.deleteUser.Name = "deleteUser";
+            this.deleteUser.Size = new System.Drawing.Size(125, 40);
+            this.deleteUser.TabIndex = 16;
+            this.deleteUser.Text = "DELETE";
+            this.deleteUser.UseVisualStyleBackColor = false;
+            this.deleteUser.Click += new System.EventHandler(this.deleteUser_Click);
+            // 
+            // getQR
+            // 
+            this.getQR.BackColor = System.Drawing.Color.MidnightBlue;
+            this.getQR.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getQR.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.getQR.Location = new System.Drawing.Point(518, 372);
+            this.getQR.Name = "getQR";
+            this.getQR.Size = new System.Drawing.Size(257, 40);
+            this.getQR.TabIndex = 17;
+            this.getQR.Text = "QR CODE";
+            this.getQR.UseVisualStyleBackColor = false;
+            this.getQR.Click += new System.EventHandler(this.getQR_Click_1);
+            // 
+            // userIDText
+            // 
+            this.userIDText.AutoSize = true;
+            this.userIDText.Font = new System.Drawing.Font("Lucida Fax", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userIDText.Location = new System.Drawing.Point(929, 283);
+            this.userIDText.Name = "userIDText";
+            this.userIDText.Size = new System.Drawing.Size(54, 16);
+            this.userIDText.TabIndex = 15;
+            this.userIDText.Text = "userID";
+            // 
+            // QRPic
+            // 
+            this.QRPic.Location = new System.Drawing.Point(797, 51);
+            this.QRPic.Name = "QRPic";
+            this.QRPic.Size = new System.Drawing.Size(226, 209);
+            this.QRPic.TabIndex = 18;
+            this.QRPic.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Bright", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(797, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 16);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "STUDENT ID :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Fax", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(791, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(221, 22);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "GENERATED QR CODE";
+            // 
             // personalinformationGroup
             // 
             this.personalinformationGroup.Controls.Add(this.label2);
@@ -134,7 +222,7 @@
             this.personalinformationGroup.Controls.Add(this.middlenameText);
             this.personalinformationGroup.Controls.Add(this.firstnameLabel);
             this.personalinformationGroup.Controls.Add(this.firstnameText);
-            this.personalinformationGroup.Location = new System.Drawing.Point(519, 27);
+            this.personalinformationGroup.Location = new System.Drawing.Point(518, 12);
             this.personalinformationGroup.Name = "personalinformationGroup";
             this.personalinformationGroup.Size = new System.Drawing.Size(253, 129);
             this.personalinformationGroup.TabIndex = 11;
@@ -197,7 +285,7 @@
             this.courseinformationGroup.Controls.Add(this.label3);
             this.courseinformationGroup.Controls.Add(this.label4);
             this.courseinformationGroup.Controls.Add(this.textlabel);
-            this.courseinformationGroup.Location = new System.Drawing.Point(519, 167);
+            this.courseinformationGroup.Location = new System.Drawing.Point(518, 147);
             this.courseinformationGroup.Name = "courseinformationGroup";
             this.courseinformationGroup.Size = new System.Drawing.Size(253, 129);
             this.courseinformationGroup.TabIndex = 12;
@@ -271,75 +359,58 @@
             this.textlabel.TabIndex = 1;
             this.textlabel.Text = "Course        :";
             // 
-            // updateButton
+            // saveQR
             // 
-            this.updateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.updateButton.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.ForeColor = System.Drawing.Color.DarkGreen;
-            this.updateButton.Location = new System.Drawing.Point(520, 300);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(255, 40);
-            this.updateButton.TabIndex = 13;
-            this.updateButton.Text = "UPDATE USER";
-            this.updateButton.UseVisualStyleBackColor = false;
-            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            this.saveQR.BackColor = System.Drawing.Color.MidnightBlue;
+            this.saveQR.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveQR.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.saveQR.Location = new System.Drawing.Point(812, 309);
+            this.saveQR.Name = "saveQR";
+            this.saveQR.Size = new System.Drawing.Size(191, 40);
+            this.saveQR.TabIndex = 22;
+            this.saveQR.Text = "SAVE QR CODE";
+            this.saveQR.UseVisualStyleBackColor = false;
+            this.saveQR.Click += new System.EventHandler(this.saveQR_Click);
             // 
-            // cancelButton
+            // cancelQR
             // 
-            this.cancelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cancelButton.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.ForeColor = System.Drawing.Color.Teal;
-            this.cancelButton.Location = new System.Drawing.Point(519, 348);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(125, 40);
-            this.cancelButton.TabIndex = 14;
-            this.cancelButton.Text = "CANCEL";
-            this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // userIDText
-            // 
-            this.userIDText.AutoSize = true;
-            this.userIDText.Location = new System.Drawing.Point(813, 27);
-            this.userIDText.Name = "userIDText";
-            this.userIDText.Size = new System.Drawing.Size(38, 13);
-            this.userIDText.TabIndex = 15;
-            this.userIDText.Text = "userID";
-            // 
-            // deleteUser
-            // 
-            this.deleteUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.deleteUser.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.deleteUser.Location = new System.Drawing.Point(650, 348);
-            this.deleteUser.Name = "deleteUser";
-            this.deleteUser.Size = new System.Drawing.Size(125, 40);
-            this.deleteUser.TabIndex = 16;
-            this.deleteUser.Text = "DELETE";
-            this.deleteUser.UseVisualStyleBackColor = false;
-            this.deleteUser.Click += new System.EventHandler(this.deleteUser_Click);
+            this.cancelQR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cancelQR.Font = new System.Drawing.Font("Lucida Fax", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelQR.ForeColor = System.Drawing.Color.Teal;
+            this.cancelQR.Location = new System.Drawing.Point(812, 355);
+            this.cancelQR.Name = "cancelQR";
+            this.cancelQR.Size = new System.Drawing.Size(191, 40);
+            this.cancelQR.TabIndex = 23;
+            this.cancelQR.Text = "CANCEL";
+            this.cancelQR.UseVisualStyleBackColor = false;
+            this.cancelQR.Click += new System.EventHandler(this.cancelQR_Click);
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 421);
+            this.ClientSize = new System.Drawing.Size(1024, 421);
+            this.Controls.Add(this.cancelQR);
+            this.Controls.Add(this.saveQR);
+            this.Controls.Add(this.personalinformationGroup);
+            this.Controls.Add(this.courseinformationGroup);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.QRPic);
+            this.Controls.Add(this.getQR);
             this.Controls.Add(this.deleteUser);
             this.Controls.Add(this.userIDText);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.courseinformationGroup);
-            this.Controls.Add(this.personalinformationGroup);
             this.Controls.Add(this.viewUsers);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(500, 100);
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Users";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.View_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.QRPic)).EndInit();
             this.personalinformationGroup.ResumeLayout(false);
             this.personalinformationGroup.PerformLayout();
             this.courseinformationGroup.ResumeLayout(false);
@@ -359,7 +430,14 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button deleteUser;
+        private System.Windows.Forms.Button getQR;
+        private System.Windows.Forms.Label userIDText;
+        private System.Windows.Forms.PictureBox QRPic;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox personalinformationGroup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox lastnameText;
@@ -374,9 +452,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label textlabel;
-        private System.Windows.Forms.Button updateButton;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Label userIDText;
-        private System.Windows.Forms.Button deleteUser;
+        private System.Windows.Forms.Button saveQR;
+        private System.Windows.Forms.Button cancelQR;
     }
 }

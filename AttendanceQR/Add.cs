@@ -125,5 +125,6 @@ namespace AttendanceQR
             MainMenu newMenu = new MainMenu();
             newMenu.ShowDialog();
         }
+
     }
 }
