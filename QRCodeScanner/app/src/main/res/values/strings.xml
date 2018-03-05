@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">QRCodeScanner</string>
-    <string name="scanQR">SCAN QR CODE</string>
+    <string name="app_name">QR READER</string>
+    <string name="scanQR">ATTENDANCE MONITORING SYSTEM</string>
 </resources>
